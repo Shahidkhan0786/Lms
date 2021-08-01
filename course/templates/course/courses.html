@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+<!-- Responsive navbar-->
+{% block title%}
+iLearning Hub
+{%endblock%}
+
+
+{% block content%}
+<div class="container">
+  </br>
+<div class="row">
+    {% for i in courses%}
+    <div class="col mx-auto">
+        <div class="card mx-auto" style="width: 18rem;">
+            <img src="https://dz8fbjd9gwp2s.cloudfront.net/courses/609a52d60cf23a7a09b2b4c3/609a52d60cf23a7a09b2b4c3_scaled_cover.jpg?v=3" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{i.name}}</h5>
+                <p>{{i.short_description}}</p>
+
+                <center><a href="/course/{{i.slug}}" class="btn btn-primary">Start Course</a></center>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div></div>
+{% endblock %}

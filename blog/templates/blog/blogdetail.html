@@ -1,0 +1,79 @@
+{% extends 'base.html'%}
+
+{% block content%}
+
+  <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Post content-->
+                    <article>
+                        <!-- Post header-->
+                        <header class="mb-4">
+                            <!-- Post title-->
+                            <h1 class="fw-bolder mb-1">{{data.title}}</h1>
+                            <!-- Post meta content-->
+                            <div class="text-muted fst-italic mb-2">Posted on {{data.timeStamp}}</div>
+                            <!-- Post categories-->
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
+                        </header>
+                        <!-- Preview image figure-->
+                        <figure class="mb-4"><img class="img-fluid rounded" src="{{data.thumbnail.url}}" alt="..." /></figure>
+                        <!-- Post content-->
+                        <section class="mb-5">
+                            {% autoescape off%}
+                            {{data.content}}
+                            {% endautoescape%}
+                        </section>
+                    </article>
+                    <!-- Comments section-->
+                    <hr>
+                    <section class="mb-5 border p-4">
+                        <div class="fb-share-button" data-href="http://localhost:8000/{{data.slug}}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8000%2Fblogcourse-will-start-from-1-august&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+                        <div class="fb-comments" data-href="http://localhost:8000/{{data.slug}}" data-width="" data-numposts="5"></div>
+                    </section>
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+                    <!-- Search widget-->
+                    <div class="card my-4">
+                <h5 class="card-header">Search</h5>
+                <div class="card-body">
+                    <form action="{% url 'test' %}" method="post">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="query" placeholder="Search for...">
+                            <span class="input-group-append">
+                <button class="btn btn-secondary" type="submit">Go!</button>
+              </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                    <!-- Categories widget-->
+                    <div class="card mb-4 mt-5 ">
+                        <div class="card-header">Categories</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="list-unstyled mb-0">
+                                {% for i in catag%}
+                                <li class="list-inline-item btn  btn-secondary m-1"><a href="{% url 'catagorywise' i.id%}" style="text-decoration:none" class="text-white">{{i.catagoryName}}</a></li>
+                                {% endfor %}
+                            </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Side widget-->
+<!--                    <div class="card mb-4">-->
+<!--                        <div class="card-header">Side Widget</div>-->
+<!--                        <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

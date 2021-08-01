@@ -1,0 +1,387 @@
+{% extends 'base.html'%}
+<!-- Responsive navbar-->
+{% block title%}
+iLearning Hub
+{%endblock%}
+
+
+{% load static%}
+
+{% block content%}
+<!-- Header-->
+
+
+{% if messages %}
+<div class="container-fluid" style="position:absolute; top:50px;">
+  {% for msg in messages %}
+    <div class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      {{msg.message}}
+    </div>
+  {% endfor %}
+    </div>
+{% endif %}
+
+
+
+<header class=" py-5" style="background:black;">
+
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+                    <h1 class="display-5 fw-bolder text-white mb-2">Present new technologies free of $ cost</h1>
+                    <p class="lead text-white mb-4">Hii Our Mission is to teach you about new technologies about
+                        Computer Science Free Of $ Cost</p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+
+                        <a class="btn btn-danger btn-lg px-4 me-sm-3" href="/courses">Browse Video Tutorial</a>
+                        <a class="btn btn-outline-light btn-success btn-lg px-4" href="/blog">Browse Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+<!-- Features section-->
+<section class="py-5 border-bottom" id="features">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="feature bg-dark bg-gradient text-white rounded-3 mb-3"><i class="bi bi-camera-reels "></i>
+                </div>
+                <h2 class="h4 fw-bolder">Free Courses</h2>
+                <p style=" text-align: justify;">Get your programming career started with these free video courses. Source code is available with all
+                    the videos for amazing learning experience.</p>
+                <a class="btn btn-primary" href="/courses">
+                    Browse Courses
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="feature bg-dark bg-gradient text-white rounded-3 mb-3"><i class="bi bi-code-slash"></i>
+                </div>
+                <h2 class="h4 fw-bolder">Codeing Articles</h2>
+                <p style=" text-align: justify;">Some of the latest coding information compiled in the form of coding articles. Keep your programming
+                    knowledge up to date with these articles.</p>
+                <a class="btn btn-primary" href="/blog">
+                    Browse Blog
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <div class="feature bg-dark bg-gradient text-white rounded-3 mb-3"><i class="bi bi-chat-text"></i>
+                </div>
+                <h2 class="h4 fw-bolder">Contact me</h2>
+                <p style=" text-align: justify;">Learn programming from these free courses. Examples are available with these tutorials. You can
+                    contact me for any doubt and I will get back to you!.</p>
+                <a class="btn btn-primary" href="/#contactsec">
+                    Contact me
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Pricing section-->
+<!-- <section class="bg-light py-5 border-bottom"> -->
+<!--            <div class="container px-5 my-5">-->
+<!--                <div class="text-center mb-5">-->
+<!--                    <h2 class="fw-bolder">Pay as you grow</h2>-->
+<!--                    <p class="lead mb-0">With our no hassle pricing plans</p>-->
+<!--                </div>-->
+<!--                <div class="row gx-5 justify-content-center">-->
+<!--                    &lt;!&ndash; Pricing card free&ndash;&gt;-->
+<!--                    <div class="col-lg-6 col-xl-4">-->
+<!--                        <div class="card mb-5 mb-xl-0">-->
+<!--                            <div class="card-body p-5">-->
+<!--                                <div class="small text-uppercase fw-bold text-muted">Free</div>-->
+<!--                                <div class="mb-3">-->
+<!--                                    <span class="display-4 fw-bold">$0</span>-->
+<!--                                    <span class="text-muted">/ mo.</span>-->
+<!--                                </div>-->
+<!--                                <ul class="list-unstyled mb-4">-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        <strong>1 users</strong>-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        5GB storage-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Unlimited public projects-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Community access-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2 text-muted">-->
+<!--                                        <i class="bi bi-x"></i>-->
+<!--                                        Unlimited private projects-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2 text-muted">-->
+<!--                                        <i class="bi bi-x"></i>-->
+<!--                                        Dedicated support-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2 text-muted">-->
+<!--                                        <i class="bi bi-x"></i>-->
+<!--                                        Free linked domain-->
+<!--                                    </li>-->
+<!--                                    <li class="text-muted">-->
+<!--                                        <i class="bi bi-x"></i>-->
+<!--                                        Monthly status reports-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                                <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Pricing card pro&ndash;&gt;-->
+<!--                    <div class="col-lg-6 col-xl-4">-->
+<!--                        <div class="card mb-5 mb-xl-0">-->
+<!--                            <div class="card-body p-5">-->
+<!--                                <div class="small text-uppercase fw-bold">-->
+<!--                                    <i class="bi bi-star-fill text-warning"></i>-->
+<!--                                    Pro-->
+<!--                                </div>-->
+<!--                                <div class="mb-3">-->
+<!--                                    <span class="display-4 fw-bold">$9</span>-->
+<!--                                    <span class="text-muted">/ mo.</span>-->
+<!--                                </div>-->
+<!--                                <ul class="list-unstyled mb-4">-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        <strong>5 users</strong>-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        5GB storage-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Unlimited public projects-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Community access-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Unlimited private projects-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Dedicated support-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Free linked domain-->
+<!--                                    </li>-->
+<!--                                    <li class="text-muted">-->
+<!--                                        <i class="bi bi-x"></i>-->
+<!--                                        Monthly status reports-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                                <div class="d-grid"><a class="btn btn-primary" href="#!">Choose plan</a></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Pricing card enterprise&ndash;&gt;-->
+<!--                    <div class="col-lg-6 col-xl-4">-->
+<!--                        <div class="card">-->
+<!--                            <div class="card-body p-5">-->
+<!--                                <div class="small text-uppercase fw-bold text-muted">Enterprise</div>-->
+<!--                                <div class="mb-3">-->
+<!--                                    <span class="display-4 fw-bold">$49</span>-->
+<!--                                    <span class="text-muted">/ mo.</span>-->
+<!--                                </div>-->
+<!--                                <ul class="list-unstyled mb-4">-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        <strong>Unlimited users</strong>-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        5GB storage-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Unlimited public projects-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Community access-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Unlimited private projects-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Dedicated support-->
+<!--                                    </li>-->
+<!--                                    <li class="mb-2">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        <strong>Unlimited</strong>-->
+<!--                                        linked domains-->
+<!--                                    </li>-->
+<!--                                    <li class="text-muted">-->
+<!--                                        <i class="bi bi-check text-primary"></i>-->
+<!--                                        Monthly status reports-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                                <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Choose plan</a></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!-- </section> -->
+<!-- Testimonials section-->
+
+<!-- Scribe section-->
+<!--<section class=" py-5 " id="scribe">-->
+<!--    <div class="container px-5 my-5 px-5">-->
+<!--        <div class="text-center mb-5">-->
+<!--            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-bell-fill"></i></div>-->
+<!--            <h2 class="fw-bolder">Get in touch</h2>-->
+<!--&lt;!&ndash;            <p class="lead mb-0">We'd love to hear from you</p>&ndash;&gt;-->
+<!--        </div>-->
+<!--        <div class="row gx-5 justify-content-center">-->
+<!--            <div class="col-lg-6">-->
+<!--                &lt;!&ndash; * * * * * * * * * * * * * * *&ndash;&gt;-->
+<!--                &lt;!&ndash; * * SB Forms Contact Form * *&ndash;&gt;-->
+<!--                &lt;!&ndash; * * * * * * * * * * * * * * *&ndash;&gt;-->
+<!--                &lt;!&ndash; This form is pre-integrated with SB Forms.&ndash;&gt;-->
+<!--                &lt;!&ndash; To make this form functional, sign up at&ndash;&gt;-->
+<!--                &lt;!&ndash; https://startbootstrap.com/solution/contact-forms&ndash;&gt;-->
+<!--                &lt;!&ndash; to get an API token!&ndash;&gt;-->
+<!--                <form id="subscribeForm" data-sb-form-api-token="API_TOKEN">-->
+
+<!--                    &lt;!&ndash; Email address input&ndash;&gt;-->
+<!--                    <div class="form-floating mb-3">-->
+<!--                        <input class="form-control" id="email" type="email" placeholder="name@example.com"-->
+<!--                               data-sb-validations="required,email"/>-->
+<!--                        <label for="email">Email address</label>-->
+<!--                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>-->
+<!--                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Phone number input&ndash;&gt;-->
+
+<!--                    &lt;!&ndash; Message input&ndash;&gt;-->
+
+<!--                    &lt;!&ndash; Submit success message&ndash;&gt;-->
+<!--                    &lt;!&ndash;&ndash;&gt;-->
+<!--                    &lt;!&ndash; This is what your users will see when the form&ndash;&gt;-->
+<!--                    &lt;!&ndash; has successfully submitted&ndash;&gt;-->
+<!--                    <div class="d-none" id="submitSuccessMessage">-->
+<!--                        <div class="text-center mb-3">-->
+<!--                            <div class="fw-bolder">Subscribe successful!</div>-->
+
+<!--                            <br/>-->
+<!--                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Submit error message&ndash;&gt;-->
+<!--                    &lt;!&ndash;&ndash;&gt;-->
+<!--                    &lt;!&ndash; This is what your users will see when there is&ndash;&gt;-->
+<!--                    &lt;!&ndash; an error submitting the form&ndash;&gt;-->
+<!--                    <div class="d-none" id="submitErrorMessage1">-->
+<!--                        <div class="text-center text-danger mb-3">Error sending message!</div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Submit Button&ndash;&gt;-->
+<!--                    <div class="d-grid">-->
+<!--                        <button class="btn btn-primary btn-lg disabled" id="" type="submit">Subscribe</button>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+
+<!--contact section-->
+<section class="bg-light py-5 " id="contactsec">
+    <div class="container px-5 my-5 px-5">
+        <div class="text-center mb-5">
+            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+            <h2 class="fw-bolder">Contact Us</h2>
+            <p class="lead mb-0">We'd love to hear from you</p>
+        </div>
+        <div class="row gx-5 justify-content-center">
+            <div class="col-lg-6">
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- * * SB Forms Contact Form * *-->
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- This form is pre-integrated with SB Forms.-->
+                <!-- To make this form functional, sign up at-->
+                <!-- https://startbootstrap.com/solution/contact-forms-->
+                <!-- to get an API token!-->
+                <form id="contactForm" action="{% url 'contactmail'%}" method="post">
+                    {% csrf_token%}
+                    <!-- Name input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" type="text" placeholder="Enter your name..."
+                               data-sb-validations="required" name="name"/>
+                        <label for="name">Full name</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                    </div>
+                    <!-- Email address input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                               data-sb-validations="required,email" name="email"/>
+                        <label for="email">Email address</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                    </div>
+                    <!-- Phone number input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
+                               data-sb-validations="required" name="phone"/>
+                        <label for="phone">Phone number</label>
+                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
+                        </div>
+                    </div>
+                    <!-- Message input-->
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..."
+                                  style="height: 10rem" data-sb-validations="required" name="message"></textarea>
+                        <label for="message">Message</label>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                    </div>
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br/>
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    </div>
+                    <!-- Submit Button-->
+                    <div class="d-grid">
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
+
